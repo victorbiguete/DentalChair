@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\DentalChair.Communication\DentalChair.Communication.csproj" />
+    <ProjectReference Include="..\..\Shared\DentalChair.Exceptions\DentalChair.Exceptions.csproj" />
+    <ProjectReference Include="..\DentalChair.Domain\DentalChair.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
