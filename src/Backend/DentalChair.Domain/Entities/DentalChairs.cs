@@ -10,9 +10,11 @@ namespace DentalChair.Domain.Entities
     {
         public string ChairNumber { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
+        public string Model { get; set; } = string.Empty;
         public DateTime PurchaseDate { get; set; }
         public DateTime LastMaintenance { get; set; }
+        public int UsageCount { get; set; } = 0;
 
-        public virtual ICollection<> Allocations { get; set; }
+        public virtual ICollection<Allocation> Allocations { get; set; }
     }
 }

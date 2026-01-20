@@ -18,6 +18,7 @@
     <ProjectReference Include="..\..\Shared\DentalChair.Communication\DentalChair.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\DentalChair.Exceptions\DentalChair.Exceptions.csproj" />
     <ProjectReference Include="..\DentalChair.Application\DentalChair.Application.csproj" />
+    <ProjectReference Include="..\DentalChair.Infrastructure\DentalChair.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
