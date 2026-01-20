@@ -11,10 +11,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\Shared\DentalChair.Communication\DentalChair.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\DentalChair.Exceptions\DentalChair.Exceptions.csproj" />
     <ProjectReference Include="..\DentalChair.Application\DentalChair.Application.csproj" />

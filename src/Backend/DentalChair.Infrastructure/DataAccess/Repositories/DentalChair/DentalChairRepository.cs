@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DentalChair.Infrastructure.DataAccess.Repositories.DentalChair
 {
-    public class DentalChairRepository : IDentalChairRepository
+    public class DentalChairRepository : IDentalChairWriteOnlyRepository, IDentalChairReadOnlyRepository, IDentalChairUpdateOnlyRepository
     {
         private readonly AppDbContext _context;
 
@@ -26,8 +26,11 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.DentalChair
 
         public async Task<List<DentalChairs>> GetAllChairsActiveAsync() => await _context.DentalChairs.Where(c => c.Active).ToListAsync();
 
-        public async Task<DentalChairs?> GetByIdAsync(long id) => await _context.DentalChairs.Where(c => c.Active && c.Id == id).FirstOrDefaultAsync();
+        async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetByIdAsync(long id) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.Id == id).FirstOrDefaultAsync();
+        
+        async Task<DentalChairs?> IDentalChairUpdateOnlyRepository.GetByIdAsync(long id) => await _context.DentalChairs.Where(c => c.Active && c.Id == id).FirstOrDefaultAsync();
 
-        public async Task<DentalChairs?> GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
+         async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
+        async Task<DentalChairs?> IDentalChairUpdateOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
     }
 }

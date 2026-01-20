@@ -37,7 +37,9 @@ namespace DentalChair.Infrastructure
 
         public static void AddRepository(IServiceCollection services)
         {
-            services.AddScoped<IDentalChairRepository, DentalChairRepository>();
+            services.AddScoped<IDentalChairWriteOnlyRepository, DentalChairRepository>();
+            services.AddScoped<IDentalChairReadOnlyRepository, DentalChairRepository>();
+            services.AddScoped<IDentalChairUpdateOnlyRepository, DentalChairRepository>();
             services.AddScoped<IUnitofWork, UnitofWork>();
         }
 

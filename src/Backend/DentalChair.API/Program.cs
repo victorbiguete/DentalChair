@@ -1,4 +1,5 @@
 using DentalChair.Infrastructure;
+using DentalChair.Application;
 using DentalChair.Infrastructure.Extensions;
 using DentalChair.Infrastructure.Migration;
 
@@ -11,6 +12,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication(builder.Configuration);
 
 var app = builder.Build();
 

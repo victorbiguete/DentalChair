@@ -11,8 +11,8 @@ namespace DentalChair.Domain.Entities
         public string ChairNumber { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;
         public string Model { get; set; } = string.Empty;
-        public DateTime PurchaseDate { get; set; }
-        public DateTime LastMaintenance { get; set; }
+        public DateTime PurchaseDate { get; set; } = DateTime.UtcNow;
+        public DateTime LastMaintenance { get; set; } = DateTime.UtcNow;
         public int UsageCount { get; set; } = 0;
 
         public virtual ICollection<Allocation> Allocations { get; set; }

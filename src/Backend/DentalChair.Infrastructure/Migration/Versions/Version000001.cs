@@ -10,7 +10,7 @@ namespace DentalChair.Infrastructure.Migration.Versions
     [Migration(DatabaseVersions.TABLE_CHAIR, "Create table to save the Chair's information")]
     public class Version000001 : VersionBase
     {
-        private const string CHAIRS_TABLE_NAME = "Chairs";
+        private const string CHAIRS_TABLE_NAME = "DentalChairs";
         public override void Up()
         {
             CreateTable(CHAIRS_TABLE_NAME)
