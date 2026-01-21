@@ -105,34 +105,50 @@ Sistema completo para **gerenciamento de cadeiras odontológicas**, com **aloca�
 ### Passos
 
 git clone https://github.com/seu-usuario/dental-chair-api.git
-cd dental-chair-api
-dotnet restore
+
 ### ⚙️ Configuração
+
+Altere apenas a String de Conexão colocando os dados do seu banco
+
 String de Conexão
-{
-  "ConnectionStrings": {
-    "DefaultConnection": "Server=localhost;Port=3306;Database=DentalChairDB;User=root;Password=suasenha;"
-  }
+"ConnectionStrings": {
+  "DefaultConnection": "Server=localhost;Database=SeuBanco;Uid=root;Pwd=SuaSenha;"
 }
 
 ---
 
 ## 🌐 Endpoints da API
+
 ### Cadeiras
 Método	Endpoint
-GET	/api/chairs
-GET	/api/chairs/{id}
-POST	/api/chairs
-PUT	/api/chairs/{id}
-DELETE	/api/chairs/{id}
-POST	/api/chairs/{id}/maintenance
+
+POST /Chair/register
+
+GET /Chair/getall
+
+GET /Chair/GetById/{id}
+
+GET /Chair/GetByChairNumber/{chairNumber}
+
+PUT /Chair/update/{id}
+
+PUT /Chair/updateMaintenance/{id}
+
+DELETE /Chair/delete/{id}
+
+
 ### Alocações
 Método	Endpoint
-POST	/api/allocations/automatic
-POST	/api/chairs/{chairId}/allocations
-GET	/api/allocations/available-slots/{date}
-PATCH	/api/allocations/{id}/status
-DELETE	/api/allocations/{id}
+
+POST	/Allocation/register
+
+PUT /Allocation/updateStatus/{id}
+
+GET /Allocation/GetAll
+
+GET /Allocation/GetChairAvailableByDate/{date}
+
+GET /Allocation/GetAllocationById/{id}
 
 ---
 
