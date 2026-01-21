@@ -24,7 +24,7 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.DentalChair
 
         public void Delete(DentalChairs dentalChairs) => _context.DentalChairs.Remove(dentalChairs);
 
-        public async Task<List<DentalChairs>> GetAllChairsActiveAsync() => await _context.DentalChairs.Where(c => c.Active).ToListAsync();
+        public async Task<List<DentalChairs>> GetAllChairsActiveAsync() => await _context.DentalChairs.AsNoTracking().Where(c => c.Active).ToListAsync();
 
         async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetByIdAsync(long id) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.Id == id).FirstOrDefaultAsync();
         
@@ -32,5 +32,7 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.DentalChair
 
          async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
         async Task<DentalChairs?> IDentalChairUpdateOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
+
+        public async Task<DentalChairs?> GetChairByChairNumberAndId(string chairNumber, long id) => await _context.DentalChairs.AsNoTracking().Where(c => c.Id == id && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
     }
 }

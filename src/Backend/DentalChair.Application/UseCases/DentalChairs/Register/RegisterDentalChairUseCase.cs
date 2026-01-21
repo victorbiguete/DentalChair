@@ -18,15 +18,13 @@ namespace DentalChair.Application.UseCases.DentalChairs.Register
     {
         private readonly IDentalChairWriteOnlyRepository _writeRepository;
         private readonly IDentalChairReadOnlyRepository _readRepository;
-        private readonly IDentalChairUpdateOnlyRepository _updateRepository;
         private readonly IMapper _mapper;
         private readonly IUnitofWork _unitofWork;
 
-        public RegisterDentalChairUseCase(IDentalChairWriteOnlyRepository writeRepository, IDentalChairReadOnlyRepository readRepository, IDentalChairUpdateOnlyRepository updateRepository, IMapper mapper, IUnitofWork unitofWork)
+        public RegisterDentalChairUseCase(IDentalChairWriteOnlyRepository writeRepository, IDentalChairReadOnlyRepository readRepository, IMapper mapper, IUnitofWork unitofWork)
         {
             _writeRepository = writeRepository;
             _readRepository = readRepository;
-            _updateRepository = updateRepository;
             _mapper = mapper;
             _unitofWork = unitofWork;
         }
@@ -54,7 +52,7 @@ namespace DentalChair.Application.UseCases.DentalChairs.Register
         {
             var validator = new RegisterDentalChairValidator();
 
-            var result = validator.Validate(request);
+            var result = await validator.ValidateAsync(request);
 
             var charNumberExist = await _readRepository.GetChairByChairNumber(request.ChairNumber);
 

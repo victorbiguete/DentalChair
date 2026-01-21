@@ -26,6 +26,8 @@ namespace DentalChair.Application.Services.AutoMapper
         private void DomainToResponse()
         {
             CreateMap<DentalChairs, ResponseRegisteredChairJson>();
+            CreateMap<DentalChairs, ResponseListDentalChairJson>();
+            CreateMap<DentalChairs, ResponseDentalChairJson>();
         }
     }
 }

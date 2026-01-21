@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace DentalChair.Exceptions.ExceptionsBase
 {
-    public class DentalChairExeceptions : Exception
+    public class NotFoundException : DentalChairExeceptions
     {
-        public DentalChairExeceptions(string? message) : base(message)
+        public NotFoundException(string? message) : base(message)
         {
         }
     }

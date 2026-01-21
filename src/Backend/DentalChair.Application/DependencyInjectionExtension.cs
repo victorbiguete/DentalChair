@@ -1,5 +1,10 @@
 ﻿using DentalChair.Application.Services.AutoMapper;
+using DentalChair.Application.UseCases.DentalChairs.Delete;
+using DentalChair.Application.UseCases.DentalChairs.GetAll;
+using DentalChair.Application.UseCases.DentalChairs.GetById;
+using DentalChair.Application.UseCases.DentalChairs.GetChairByChairNumber;
 using DentalChair.Application.UseCases.DentalChairs.Register;
+using DentalChair.Application.UseCases.DentalChairs.Update;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -21,6 +26,11 @@ namespace DentalChair.Application
         private static void AddUseCase(IServiceCollection services)
         {
             services.AddScoped<IRegisterDentalChairUseCase, RegisterDentalChairUseCase>();
+            services.AddScoped<IGetAllDentalChairUseCase, GetAllDentalChairUseCase>();
+            services.AddScoped<IGetByIdDentalChairUseCase, GetByIdDentalChairUseCase>();
+            services.AddScoped<IGetByChairNumberUseCase, GetByChairNumberUseCase>();
+            services.AddScoped<IUpdateDentalChairUseCase, UpdateDentalChairUseCase>();
+            services.AddScoped<IDeleteDentalChairUseCase, DeleteDentalChairUseCase>();
         }
 
         private static void AddAutoMapper(IServiceCollection services)

@@ -61,6 +61,24 @@ namespace DentalChair.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Chair(s) Not Found.
+        /// </summary>
+        public static string CHAIR_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("CHAIR_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Chair Number is Already Taken by Another Chair..
+        /// </summary>
+        public static string CHAIR_NUMBER_ALREADY_EXIST_IN_OTHER_CHAIR {
+            get {
+                return ResourceManager.GetString("CHAIR_NUMBER_ALREADY_EXIST_IN_OTHER_CHAIR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The Chair Number Already Registered.
         /// </summary>
         public static string CHAIR_NUMBER_ALREADY_REGISTERED {
@@ -93,6 +111,24 @@ namespace DentalChair.Exceptions {
         public static string MODEL_CHAIR_EMPTY {
             get {
                 return ResourceManager.GetString("MODEL_CHAIR_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Purchase Date cannot be Empty.
+        /// </summary>
+        public static string PURCHASE_DATE_EMPTY {
+            get {
+                return ResourceManager.GetString("PURCHASE_DATE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Unknow Error.
+        /// </summary>
+        public static string UNKNOW_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOW_ERROR", resourceCulture);
             }
         }
     }
