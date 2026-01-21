@@ -1,4 +1,5 @@
 ﻿using DentalChair.Application.UseCases.Allocations.GetAll;
+using DentalChair.Application.UseCases.Allocations.GetById;
 using DentalChair.Application.UseCases.Allocations.GetChairAvailableByDate;
 using DentalChair.Application.UseCases.Allocations.Register;
 using DentalChair.Application.UseCases.Allocations.Update.Status;
@@ -43,6 +44,15 @@ namespace DentalChair.API.Controllers
         public async Task<IActionResult> GetChairAvailableByDate([FromServices] IGetChairAvailableByDate useCase, [FromRoute] DateTime date)
         {
             var result = await useCase.Execute(date);
+
+            return Ok(result);
+        }
+
+        [HttpGet("GetAllocationById/{id}")]
+        [ProducesResponseType(typeof(ResponseAllocationJson), StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAllocationById([FromServices] IGetByIdUseCase useCase, long id)
+        {
+            var result = await useCase.Execute(id);
 
             return Ok(result);
         }
