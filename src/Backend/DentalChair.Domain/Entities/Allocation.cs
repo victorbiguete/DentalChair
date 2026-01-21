@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DentalChair.Domain.Enum;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,8 +14,8 @@ namespace DentalChair.Domain.Entities
         public DateTime EndDate { get; set; }
         public string PatientName { get; set; } = string.Empty;
         public string ProcedureType { get; set; } = string.Empty;
-
+        public StatusChair Status { get; set; } = StatusChair.Scheduled;
         
-        public virtual DentalChairs DentalChair { get; set; }
+        public DentalChairs DentalChair { get; set; }
     }
 }

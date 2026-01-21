@@ -41,6 +41,7 @@ namespace DentalChair.Application.UseCases.DentalChairs.Update
             dentalChair.ChairNumber = request.ChairNumber;
             dentalChair.Description = request.Description;
             dentalChair.Model = request.Model;
+            dentalChair.UpdatedAt = DateTime.UtcNow;
 
             _repositoryUpdate.Update(dentalChair);
 
@@ -57,6 +58,7 @@ namespace DentalChair.Application.UseCases.DentalChairs.Update
             }
 
             dentalChair.UsageCount++;
+            dentalChair.UpdatedAt = DateTime.UtcNow;
 
             _repositoryUpdate.Update(dentalChair);
 
@@ -73,6 +75,7 @@ namespace DentalChair.Application.UseCases.DentalChairs.Update
             }
 
             dentalChair.LastMaintenance = maintenanceDate;
+            dentalChair.UpdatedAt = DateTime.UtcNow;
 
             _repositoryUpdate.Update(dentalChair);
 
