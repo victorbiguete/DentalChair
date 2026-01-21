@@ -1,4 +1,5 @@
-﻿using DentalChair.Application.UseCases.Allocations.Register;
+﻿using DentalChair.Application.UseCases.Allocations.GetAll;
+using DentalChair.Application.UseCases.Allocations.Register;
 using DentalChair.Application.UseCases.Allocations.Update.Status;
 using DentalChair.Communication.Request;
 using DentalChair.Communication.Response;
@@ -26,6 +27,14 @@ namespace DentalChair.API.Controllers
         {
             await useCase.Execute(id, request);
             return Ok();
+        }
+
+        [HttpGet("GetAll")]
+        [ProducesResponseType(typeof(string),StatusCodes.Status200OK)]
+        public async Task<IActionResult> GetAll([FromServices]IGetAllAllocationUseCase useCase)
+        {
+            var result = await useCase.Execute();
+            return Ok(result);
         }
 
         

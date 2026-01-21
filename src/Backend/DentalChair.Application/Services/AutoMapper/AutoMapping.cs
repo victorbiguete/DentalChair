@@ -30,6 +30,7 @@ namespace DentalChair.Application.Services.AutoMapper
             CreateMap<DentalChairs, ResponseListDentalChairJson>();
             CreateMap<DentalChairs, ResponseDentalChairJson>();
             CreateMap<Allocation, ResponseAllocationJson>();
+            CreateMap<Allocation, ResponseListAllocationJson>();
         }
     }
 }
