@@ -44,6 +44,11 @@ namespace DentalChair.API.Filters
                 context.HttpContext.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 context.Result = new NotFoundObjectResult(new ResponseErrorJson(context.Exception.Message));
             }
+            else if(context.Exception is BusinessRuleException)
+            {
+                context.HttpContext.Response.StatusCode = (int)HttpStatusCode.BadRequest;
+                context.Result = new BadRequestObjectResult(new ResponseErrorJson(context.Exception.Message));
+            }
         }
 
         private static void ThrowUnknowException(ExceptionContext context)

@@ -12,6 +12,5 @@ namespace DentalChair.Domain.IRepository.DentalChair
         public Task<List<DentalChairs>> GetAllChairsActiveAsync();
         public Task<DentalChairs?> GetByIdAsync(long id);
         public Task<DentalChairs?> GetChairByChairNumber(string chairNumber);
-        public Task<DentalChairs?> GetChairByChairNumberAndId(string chairNumber, long id);
     }
 }

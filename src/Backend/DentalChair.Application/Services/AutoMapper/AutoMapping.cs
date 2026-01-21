@@ -21,6 +21,7 @@ namespace DentalChair.Application.Services.AutoMapper
         private void RequestToDomain()
         {
             CreateMap<RequestRegisterChairJson, DentalChairs>();
+            CreateMap<RequestRegisterAllocationJson, Allocation>();
         }
 
         private void DomainToResponse()
@@ -28,6 +29,7 @@ namespace DentalChair.Application.Services.AutoMapper
             CreateMap<DentalChairs, ResponseRegisteredChairJson>();
             CreateMap<DentalChairs, ResponseListDentalChairJson>();
             CreateMap<DentalChairs, ResponseDentalChairJson>();
+            CreateMap<Allocation, ResponseAllocationJson>();
         }
     }
 }

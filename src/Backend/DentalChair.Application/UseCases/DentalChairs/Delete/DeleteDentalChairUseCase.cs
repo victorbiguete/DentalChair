@@ -12,27 +12,27 @@ namespace DentalChair.Application.UseCases.DentalChairs.Delete
 {
     public class DeleteDentalChairUseCase : IDeleteDentalChairUseCase
     {
-        private readonly IDentalChairWriteOnlyRepository _repository;
-        private readonly IDentalChairReadOnlyRepository _repositoryReadOnly;
+        private readonly IDentalChairUpdateOnlyRepository _repository;
         private readonly IUnitofWork _unitofWork;
 
-        public DeleteDentalChairUseCase(IDentalChairWriteOnlyRepository repository, IDentalChairReadOnlyRepository repositoryReadOnly, IUnitofWork unitofWork)
+        public DeleteDentalChairUseCase(IDentalChairUpdateOnlyRepository repository, IUnitofWork unitofWork)
         {
             _repository = repository;
-            _repositoryReadOnly = repositoryReadOnly;
             _unitofWork = unitofWork;
         }
 
         public async Task Execute(long id)
         {
-            var dentalChair = await _repositoryReadOnly.GetByIdAsync(id);
+            var dentalChair = await _repository.GetByIdAsync(id);
 
             if(dentalChair is null)
             {
                 throw new NotFoundException(ResourceMessagesExceptions.CHAIR_NOT_FOUND);
             }
 
-            _repository.Delete(dentalChair);
+            dentalChair.Active = false;
+
+            _repository.Update(dentalChair);
 
             await _unitofWork.Commit();
         }

@@ -1,6 +1,8 @@
-﻿using DentalChair.Domain.IRepository.Allocation;
+﻿using DentalChair.Domain.Enum;
+using DentalChair.Domain.IRepository.Allocation;
 using Microsoft.EntityFrameworkCore;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,7 +36,17 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.Allocation
         async Task<Domain.Entities.Allocation?> IUpdateOnlyAllocationRepository.GetByIdAsync(long id) => await _context.Allocations.Where(a => a.Id == id).FirstOrDefaultAsync();
 
         public void Update(Domain.Entities.Allocation allocation) => _context.Allocations.Update(allocation);
+        public async Task<bool> IsChairAvailableAsync(long id, DateTime start, DateTime end)
+        {
+            var hasConflict = await _context.Allocations
+                .Where(a => a.DentalChairId == id)
+                .Where(a => a.Status != StatusChair.Cancelled)
+                .AnyAsync(a =>
+                    a.StartDate <= end &&   // A alocação existente começa antes do término solicitado
+                    a.EndDate >= start      // E termina depois do início solicitado
+                );
 
-        //public async Task<bool> IsChairAvailableAsync() => await _context.Allocations.AsNoTracking().Where(a => a.Active &&);
+            return hasConflict;
+        }
     }
 }

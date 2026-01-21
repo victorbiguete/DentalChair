@@ -15,6 +15,5 @@ namespace DentalChair.Domain.Entities
         public DateTime LastMaintenance { get; set; } = DateTime.UtcNow;
         public int UsageCount { get; set; } = 0;
 
-        public virtual ICollection<Allocation> Allocations { get; set; }
     }
 }

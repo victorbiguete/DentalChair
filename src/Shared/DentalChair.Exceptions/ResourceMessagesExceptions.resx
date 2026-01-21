@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ALLOCATION_NOT_FOUND" xml:space="preserve">
+    <value>Allocation Not Found</value>
+  </data>
   <data name="CHAIR_NOT_FOUND" xml:space="preserve">
     <value>Chair(s) Not Found</value>
   </data>
@@ -129,14 +132,50 @@
   <data name="CHAIR_NUMBER_EMPTY" xml:space="preserve">
     <value>The Chair Number Cannot be Empty.</value>
   </data>
+  <data name="DENTAL_CHAIR_EMPTY" xml:space="preserve">
+    <value>The Dental Chair cannot be Empty</value>
+  </data>
   <data name="DESCRIPTION_CHAIR_EMPTY" xml:space="preserve">
     <value>The Description Chair Cannot be Empty</value>
+  </data>
+  <data name="END_DATE_EMPTY" xml:space="preserve">
+    <value>The End Date cannot be Empty</value>
+  </data>
+  <data name="END_DATE_GREATER_THAN" xml:space="preserve">
+    <value>The End Date Must Be Later Than The Start Date.</value>
   </data>
   <data name="MODEL_CHAIR_EMPTY" xml:space="preserve">
     <value>The Model Chair Cannot be Empty</value>
   </data>
+  <data name="NO_CHAIRS_AVAILABLE" xml:space="preserve">
+    <value>There are no seats available at the requested time.</value>
+  </data>
+  <data name="PATIENT_NAME_EMPTY" xml:space="preserve">
+    <value>The Patient Name Cannot be Empty </value>
+  </data>
+  <data name="PATIENT_NAME_MAX_LENGHT" xml:space="preserve">
+    <value>The patient's name must have up to 200 letters.</value>
+  </data>
+  <data name="PROCEDURE_TYPE_EMPTY" xml:space="preserve">
+    <value>The Procedure Type cannot be Empty</value>
+  </data>
+  <data name="PROCEDURE_TYPE_MAX_LENGHT" xml:space="preserve">
+    <value>The Procedure Type must have up to 100 letters</value>
+  </data>
   <data name="PURCHASE_DATE_EMPTY" xml:space="preserve">
     <value>The Purchase Date cannot be Empty</value>
+  </data>
+  <data name="STAR_DATE_EMPTY" xml:space="preserve">
+    <value>The Star Date Cannot be Empty</value>
+  </data>
+  <data name="STAR_DATE_GREATER_THAN" xml:space="preserve">
+    <value>The Start Date must be later than the current date.</value>
+  </data>
+  <data name="STATUS_ALLOCATION_EMPTY" xml:space="preserve">
+    <value>Status Allocation Cannot Be Empty</value>
+  </data>
+  <data name="STATUS_ALLOCATION_NOT_SUPPORTED" xml:space="preserve">
+    <value>Status Allocation Not Supported</value>
   </data>
   <data name="UNKNOW_ERROR" xml:space="preserve">
     <value>Unknow Error</value>

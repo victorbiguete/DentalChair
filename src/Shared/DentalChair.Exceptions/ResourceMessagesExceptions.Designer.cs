@@ -61,6 +61,15 @@ namespace DentalChair.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Allocation Not Found.
+        /// </summary>
+        public static string ALLOCATION_NOT_FOUND {
+            get {
+                return ResourceManager.GetString("ALLOCATION_NOT_FOUND", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a Chair(s) Not Found.
         /// </summary>
         public static string CHAIR_NOT_FOUND {
@@ -97,11 +106,38 @@ namespace DentalChair.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Dental Chair cannot be Empty.
+        /// </summary>
+        public static string DENTAL_CHAIR_EMPTY {
+            get {
+                return ResourceManager.GetString("DENTAL_CHAIR_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The Description Chair Cannot be Empty.
         /// </summary>
         public static string DESCRIPTION_CHAIR_EMPTY {
             get {
                 return ResourceManager.GetString("DESCRIPTION_CHAIR_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The End Date cannot be Empty.
+        /// </summary>
+        public static string END_DATE_EMPTY {
+            get {
+                return ResourceManager.GetString("END_DATE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The End Date Must Be Later Than The Start Date..
+        /// </summary>
+        public static string END_DATE_GREATER_THAN {
+            get {
+                return ResourceManager.GetString("END_DATE_GREATER_THAN", resourceCulture);
             }
         }
         
@@ -115,11 +151,92 @@ namespace DentalChair.Exceptions {
         }
         
         /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a There are no seats available at the requested time..
+        /// </summary>
+        public static string NO_CHAIRS_AVAILABLE {
+            get {
+                return ResourceManager.GetString("NO_CHAIRS_AVAILABLE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Patient Name Cannot be Empty .
+        /// </summary>
+        public static string PATIENT_NAME_EMPTY {
+            get {
+                return ResourceManager.GetString("PATIENT_NAME_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The patient&apos;s name must have up to 200 letters..
+        /// </summary>
+        public static string PATIENT_NAME_MAX_LENGHT {
+            get {
+                return ResourceManager.GetString("PATIENT_NAME_MAX_LENGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Procedure Type cannot be Empty.
+        /// </summary>
+        public static string PROCEDURE_TYPE_EMPTY {
+            get {
+                return ResourceManager.GetString("PROCEDURE_TYPE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Procedure Type must have up to 100 letters.
+        /// </summary>
+        public static string PROCEDURE_TYPE_MAX_LENGHT {
+            get {
+                return ResourceManager.GetString("PROCEDURE_TYPE_MAX_LENGHT", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Consulta uma cadeia de caracteres localizada semelhante a The Purchase Date cannot be Empty.
         /// </summary>
         public static string PURCHASE_DATE_EMPTY {
             get {
                 return ResourceManager.GetString("PURCHASE_DATE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Star Date Cannot be Empty.
+        /// </summary>
+        public static string STAR_DATE_EMPTY {
+            get {
+                return ResourceManager.GetString("STAR_DATE_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a The Start Date must be later than the current date..
+        /// </summary>
+        public static string STAR_DATE_GREATER_THAN {
+            get {
+                return ResourceManager.GetString("STAR_DATE_GREATER_THAN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Status Allocation Cannot Be Empty.
+        /// </summary>
+        public static string STATUS_ALLOCATION_EMPTY {
+            get {
+                return ResourceManager.GetString("STATUS_ALLOCATION_EMPTY", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Status Allocation Not Supported.
+        /// </summary>
+        public static string STATUS_ALLOCATION_NOT_SUPPORTED {
+            get {
+                return ResourceManager.GetString("STATUS_ALLOCATION_NOT_SUPPORTED", resourceCulture);
             }
         }
         

@@ -14,6 +14,6 @@ namespace DentalChair.Domain.IRepository.Allocation
         Task<IList<Entities.Allocation>> GetAllAllocationAsync();
         Task<IList<Entities.Allocation>> GetByDateRangeAsync(DateTime start, DateTime end);
         Task<IList<Entities.Allocation>> GetByPatienceNameAsync(string patientName);
-        //Task<bool> IsChairAvailableAsync();
+        Task<bool> IsChairAvailableAsync(long id,DateTime start, DateTime end);
     }
 }

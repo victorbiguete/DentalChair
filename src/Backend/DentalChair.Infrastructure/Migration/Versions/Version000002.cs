@@ -15,17 +15,14 @@ namespace DentalChair.Infrastructure.Migration.Versions
 
         public override void Up()
         {
-            Create.Table(ALLOCATION_TABLE_NAME)
-            .WithColumn("Id").AsInt64().PrimaryKey().Identity()
+            CreateTable(ALLOCATION_TABLE_NAME)
             .WithColumn("DentalChairId").AsInt64().NotNullable()
             .WithColumn("PatientName").AsString(200).NotNullable()
             .WithColumn("ProcedureType").AsString(100).Nullable()
             .WithColumn("StartDate").AsDateTime().NotNullable()
             .WithColumn("EndDate").AsDateTime().NotNullable()
             .WithColumn("Status").AsInt32().NotNullable().WithDefaultValue(1)
-            .WithColumn("Notes").AsString(1000).Nullable()
-            .WithColumn("CreatedAt").AsDateTime().NotNullable().WithDefault(SystemMethods.CurrentUTCDateTime)
-            .WithColumn("UpdatedAt").AsDateTime().NotNullable().WithDefault(SystemMethods.CurrentUTCDateTime);
+            .WithColumn("Notes").AsString(1000).Nullable();
 
             // Foreign Key
             Create.ForeignKey("FK_Allocations_Chairs")

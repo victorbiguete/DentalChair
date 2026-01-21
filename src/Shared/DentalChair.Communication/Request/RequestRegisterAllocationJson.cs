@@ -1,13 +1,13 @@
-﻿using DentalChair.Domain.Enum;
+﻿using DentalChair.Communication.Enum;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DentalChair.Domain.Entities
+namespace DentalChair.Communication.Request
 {
-    public class Allocation : EntityBase
+    public class RequestRegisterAllocationJson
     {
         public long DentalChairId { get; set; }
         public DateTime StartDate { get; set; } = DateTime.Now;

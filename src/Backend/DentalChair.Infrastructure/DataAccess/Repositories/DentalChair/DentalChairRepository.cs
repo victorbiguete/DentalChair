@@ -30,9 +30,8 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.DentalChair
         
         async Task<DentalChairs?> IDentalChairUpdateOnlyRepository.GetByIdAsync(long id) => await _context.DentalChairs.Where(c => c.Active && c.Id == id).FirstOrDefaultAsync();
 
-         async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
+        async Task<DentalChairs?> IDentalChairReadOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.AsNoTracking().Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
         async Task<DentalChairs?> IDentalChairUpdateOnlyRepository.GetChairByChairNumber(string chairNumber) => await _context.DentalChairs.Where(c => c.Active && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
 
-        public async Task<DentalChairs?> GetChairByChairNumberAndId(string chairNumber, long id) => await _context.DentalChairs.AsNoTracking().Where(c => c.Id == id && c.ChairNumber.Equals(chairNumber)).FirstOrDefaultAsync();
     }
 }

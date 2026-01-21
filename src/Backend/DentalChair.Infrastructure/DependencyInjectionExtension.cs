@@ -1,6 +1,8 @@
 ﻿using DentalChair.Domain.IRepository;
+using DentalChair.Domain.IRepository.Allocation;
 using DentalChair.Domain.IRepository.DentalChair;
 using DentalChair.Infrastructure.DataAccess;
+using DentalChair.Infrastructure.DataAccess.Repositories.Allocation;
 using DentalChair.Infrastructure.DataAccess.Repositories.DentalChair;
 using DentalChair.Infrastructure.Extensions;
 using FluentMigrator.Runner;
@@ -40,6 +42,9 @@ namespace DentalChair.Infrastructure
             services.AddScoped<IDentalChairWriteOnlyRepository, DentalChairRepository>();
             services.AddScoped<IDentalChairReadOnlyRepository, DentalChairRepository>();
             services.AddScoped<IDentalChairUpdateOnlyRepository, DentalChairRepository>();
+            services.AddScoped<IReadOnlyAllocationRepository, AllocationRepository>();
+            services.AddScoped<IWriteOnlyAllocationRepository, AllocationRepository>();
+            services.AddScoped<IUpdateOnlyAllocationRepository, AllocationRepository>();
             services.AddScoped<IUnitofWork, UnitofWork>();
         }
 
