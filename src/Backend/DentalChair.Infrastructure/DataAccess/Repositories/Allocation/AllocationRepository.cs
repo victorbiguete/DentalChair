@@ -48,5 +48,12 @@ namespace DentalChair.Infrastructure.DataAccess.Repositories.Allocation
 
             return hasConflict;
         }
+
+        public async Task<IList<long>> GetChairsByDateAsync(DateTime start) => 
+            await _context.Allocations.AsNoTracking()
+            .Where(a => a.Active 
+            && a.StartDate <= start && a.EndDate >= start)
+            .Select(a => a.DentalChairId)
+            .Distinct().ToListAsync();
     }
 }

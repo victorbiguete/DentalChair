@@ -1,5 +1,6 @@
 ﻿using DentalChair.Application.Services.AutoMapper;
 using DentalChair.Application.UseCases.Allocations.GetAll;
+using DentalChair.Application.UseCases.Allocations.GetChairAvailableByDate;
 using DentalChair.Application.UseCases.Allocations.Register;
 using DentalChair.Application.UseCases.Allocations.Update.Status;
 using DentalChair.Application.UseCases.DentalChairs.Delete;
@@ -37,6 +38,7 @@ namespace DentalChair.Application
             services.AddScoped<IRegisterAllocationUseCase, RegisterAllocationUseCase>();
             services.AddScoped<IUpdateStatusAllocationUseCase, UpdateStatusAllocationUseCase>();
             services.AddScoped<IGetAllAllocationUseCase, GetAllAllocationUseCase>();
+            services.AddScoped<IGetChairAvailableByDate, GetChairAvailableByDate>();
         }
 
         private static void AddAutoMapper(IServiceCollection services)
