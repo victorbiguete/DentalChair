@@ -1,1 +1,152 @@
-# GerenciadorDeCadeiras
+# 🦷 Sistema de Gerenciamento de Cadeiras Odontológicas
+
+![.NET](https://img.shields.io/badge/.NET-8.0-512BD4?style=for-the-badge&logo=dotnet)
+![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
+![API REST](https://img.shields.io/badge/API-RESTful-009688?style=for-the-badge&logo=swagger&logoColor=white)
+![Clean Architecture](https://img.shields.io/badge/Architecture-Clean%20Architecture-FF6F00?style=for-the-badge)
+
+Sistema completo para **gerenciamento de cadeiras odontológicas**, com **alocação automática inteligente**, desenvolvido em **.NET 8**, seguindo os princípios da **Clean Architecture** e boas práticas de engenharia de software.
+
+---
+
+## 📋 Índice
+- [Funcionalidades](#-funcionalidades)
+- [Arquitetura](#-arquitetura)
+- [Tecnologias](#-tecnologias)
+- [Instalação](#-instalação)
+- [Endpoints da API](#-endpoints-da-api)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+
+---
+
+## ✨ Funcionalidades
+
+### 🪑 Gestão de Cadeiras
+- CRUD completo de cadeiras odontológicas
+- Cadastro com número único, descrição, modelo e fabricante
+- Controle de manutenção (data da última manutenção)
+- Contador de uso para balanceamento de alocações
+- Ativação e inativação de cadeiras
+
+### 📅 Sistema de Alocação Inteligente
+- Alocação automática com rotação inteligente
+- Distribuição proporcional baseada no histórico de uso
+- Validação de conflitos de horário
+- Controle de status (Agendado → Em andamento → Concluído / Cancelado)
+- Alocação manual para exceções
+- Consulta de disponibilidade por período
+
+### 🛡️ Funcionalidades Técnicas
+- Validações robustas com **FluentValidation**
+- Tratamento global de erros
+- Documentação automática com **Swagger / OpenAPI**
+- Migrações de banco com **FluentMigrator**
+- Injeção de dependência
+- AutoMapper para transformação de dados
+- Logging estruturado
+
+---
+
+## 🏗️ Arquitetura
+
+### Clean Architecture / Onion Architecture
+
+┌─────────────────────────────────────────────────────────┐
+│ DentalChair.API │ ← Controllers, Middleware             │
+├─────────────────────────────────────────────────────────┤
+│ DentalChair.Application │ ← Use Cases, DTOs, Services   │
+├─────────────────────────────────────────────────────────┤
+│ DentalChair.Domain │ ← Entities, Interfaces, Rules      │
+├─────────────────────────────────────────────────────────┤
+│ DentalChair.Infrastructure │ ← Repositories, DbContext  │
+└─────────────────────────────────────────────────────────┘
+
+
+### Padrões Utilizados
+- Clean Architecture
+- Repository Pattern
+- CQRS (Light)
+- Domain-Driven Design (DDD)
+- Dependency Injection
+
+---
+
+## 🛠️ Tecnologias
+
+### Backend
+| Tecnologia | Versão |
+|----------|--------|
+| .NET | 8.0 |
+| Entity Framework Core | 8.0 |
+| FluentMigrator | 3.3.2 |
+| FluentValidation | 11.9.0 |
+| AutoMapper | 12.0.1 |
+| Dapper | 2.1.28 |
+| MySqlConnector | 8.3.0 |
+
+### Banco de Dados
+| Tecnologia | Finalidade |
+|----------|------------|
+| MySQL 8+ | Banco relacional |
+| Índices | Performance |
+| Foreign Keys | Integridade |
+| Transações ACID | Consistência |
+
+---
+
+## 🚀 Instalação
+
+### Pré-requisitos
+- .NET 8 SDK
+- MySQL 8+ ou Docker
+- Git
+- Visual Studio 2022+ ou VS Code
+
+### Passos
+
+git clone https://github.com/seu-usuario/dental-chair-api.git
+cd dental-chair-api
+dotnet restore
+### ⚙️ Configuração
+String de Conexão
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Port=3306;Database=DentalChairDB;User=root;Password=suasenha;"
+  }
+}
+
+---
+
+## 🌐 Endpoints da API
+### Cadeiras
+Método	Endpoint
+GET	/api/chairs
+GET	/api/chairs/{id}
+POST	/api/chairs
+PUT	/api/chairs/{id}
+DELETE	/api/chairs/{id}
+POST	/api/chairs/{id}/maintenance
+### Alocações
+Método	Endpoint
+POST	/api/allocations/automatic
+POST	/api/chairs/{chairId}/allocations
+GET	/api/allocations/available-slots/{date}
+PATCH	/api/allocations/{id}/status
+DELETE	/api/allocations/{id}
+
+---
+
+## 📁 Estrutura do Projeto
+
+Organização baseada em responsabilidades claras, separando domínio, aplicação, infraestrutura e API.
+
+src/
+  Backend/
+   ├── DentalChair.API
+   ├── DentalChair.Application
+   ├── DentalChair.Domain
+   └── DentalChair.Infrastructure
+  Shared/
+  ├── DentalChair.Communication
+  ├── DentalChair.Exceptions
+
