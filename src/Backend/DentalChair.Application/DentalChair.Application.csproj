@@ -7,6 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Binder" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Shared\DentalChair.Communication\DentalChair.Communication.csproj" />
     <ProjectReference Include="..\..\Shared\DentalChair.Exceptions\DentalChair.Exceptions.csproj" />
     <ProjectReference Include="..\DentalChair.Domain\DentalChair.Domain.csproj" />
